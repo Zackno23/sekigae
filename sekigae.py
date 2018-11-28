@@ -3,33 +3,26 @@ import random
 all_list = []
 with open("members.txt") as names:
     name_list = names.read().split("\n")
-TableA_list = random.sample(name_list, 6)
-for name in TableA_list:
-    name_list.remove(name)
-TableB_list = random.sample(name_list, 5)
-for name in TableB_list:
-    name_list.remove(name)
-TableC_list = name_list
-print(TableA_list)
-all_list = [TableA_list, TableB_list, TableC_list]
+print(name_list)
+
 
 tf = False
 # anotherlist = random.sample(TableA_list, len(TableA_list))
 
 while tf == False:
-    anotherlist = random.sample(TableA_list, len(TableA_list))
-    for i in range(len(TableA_list)):
-        if i != 5:
-            nabor_list = [TableA_list[i - 1], TableA_list[i + 1]]
+    anotherlist = random.sample(name_list, len(name_list))
+    for i in range(len(name_list)):
+        if i != len(name_list) - 1:
+            nabor_list = [name_list[i - 1], name_list[i + 1]]
         else:
-            nabor_list = [TableA_list[i - 1], TableA_list[0]]
-        num = anotherlist.index(TableA_list[i])
-        if num != 5:
+            nabor_list = [name_list[i - 1], name_list[0]]
+        num = anotherlist.index(name_list[i])
+        if num != len(name_list) - 1:
             another_nabor_list = [anotherlist[num - 1], anotherlist[num + 1]]
             if (nabor_list[0] in another_nabor_list) or (nabor_list[1] in another_nabor_list):
                 break
             else:
-                if i != 5:
+                if i != len(name_list) - 1:
                     continue
                 else:
                     print(anotherlist)
@@ -40,7 +33,7 @@ while tf == False:
             if (nabor_list[0] in another_nabor_list) or (nabor_list[1] in another_nabor_list):
                 break
             else:
-                if i != 5:
+                if i != len(name_list):
                     continue
                 else:
                     print(anotherlist)
@@ -48,8 +41,10 @@ while tf == False:
                     break
     if not tf:
         continue
-'''
-'''
-# for i in range(len(TableA_list)):
-#     nabor_dict = {TableA_list[i]:[TableA_list[i-1],TableA_list[i+1]]}
-#
+Table_List_A = anotherlist[:6]
+Table_list_B = anotherlist[6:11]
+Table_List_C = anotherlist[11:]
+
+print(Table_List_A)
+print(Table_list_B)
+print(Table_List_C)
