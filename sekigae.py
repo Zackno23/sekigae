@@ -8,7 +8,7 @@ with open("members.txt") as names:
 tf = False
 # anotherlist = random.sample(TableA_list, len(TableA_list))
 while True:
-    tf = Falsey
+    tf = False
     while tf == False:
         anotherlist = random.sample(name_list, len(name_list))
         for i in range(len(name_list)):
@@ -47,7 +47,9 @@ while True:
     print(Table_list_B)
     print(Table_List_C)
 
-    name_list = anotherlist
+    str_another = "\n".join(anotherlist)
+    with open("members.txt", "w") as file:
+        file.write(str_another)
     question = input('席替えを続けますか?(y/n)')
     if question.lower() == "n":
         break
