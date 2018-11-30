@@ -2,7 +2,7 @@ import random
 
 
 def shuffle(name_list, tf):
-    while tf == False:
+    while not tf:
         anotherlist = random.sample(name_list, len(name_list))
         for i in range(len(name_list)):
             if i != len(name_list) - 1:
