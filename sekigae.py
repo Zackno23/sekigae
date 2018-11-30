@@ -12,7 +12,7 @@ while True:
     tf = False
     table_list = shuffle(name_list, tf)
 
-    print(table_list[:6], table_list[6:11], table_list[11:])
+    print('table A:', table_list[:6], '\ntable B:', table_list[6:11], "\ntable C:", table_list[11:])
 
     str_another = "\n".join(table_list)
     with open("members.txt", "w") as file:
