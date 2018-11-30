@@ -4,12 +4,10 @@ all_list = []
 with open("members.txt") as names:
     name_list = names.read().split("\n")
 
-
 tf = False
-# anotherlist = random.sample(TableA_list, len(TableA_list))
 while True:
     tf = False
-    while tf == False:
+    while not tf:
         anotherlist = random.sample(name_list, len(name_list))
         for i in range(len(name_list)):
             if i != len(name_list) - 1:
@@ -43,9 +41,11 @@ while True:
     Table_list_B = anotherlist[6:11]
     Table_List_C = anotherlist[11:]
 
-    print(Table_List_A)
-    print(Table_list_B)
-    print(Table_List_C)
+    print('tableA', Table_List_A)
+    print('tableB', Table_list_B)
+    print('tableC', Table_List_C)
+    print("''''''''''''''''''''''''''''''''''")
+    print('今日の主役:', random.choice(anotherlist))
 
     str_another = "\n".join(anotherlist)
     with open("members.txt", "w") as file:
